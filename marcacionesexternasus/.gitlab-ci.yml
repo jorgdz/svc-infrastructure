@@ -1,0 +1,23 @@
+image: docker:stable
+
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_ID 
+    - if: $CI_COMMIT_BRANCH == 'master'
+    
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+
+stages:
+  - build
+#  - analysis
+
+maven-build:
+  image: maven:3-jdk-8
+  stage: build
+  script: "mvn package -B"
+  artifacts:
+    paths:
+      - target/*.jar

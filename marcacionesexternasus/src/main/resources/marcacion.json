@@ -1,0 +1,38 @@
+
+{
+   "idMarking":"55004",
+   "dateMarked":"2020-05-15 08:20:34",
+   "location":"5to Paseo 4A NE",
+   "latitude":"Entrada",
+   "length":"jusca@righttek.com",
+   "minDelay":"290min",
+   "minGrace":null,
+   "branchId":71,
+   "typeMarked":1,
+   "userId":184
+}
+,
+{
+   "idMarking":"55005",
+   "dateMarked":"2020-05-15 08:20:37",
+   "location":"1º Pt. 33 NO",
+   "latitude":"Entrada",
+   "length":"mroca@righttek.com",
+   "minDelay":"290min",
+   "minGrace":null,
+   "branchId":65,
+   "typeMarked":1,
+   "userId":85
+},
+{
+   "idMarking":"55006",
+   "dateMarked":"2020-05-15 08:20:37",
+   "location":null,
+   "latitude":"Entrada",
+   "length":"jpichu@righttek.com",
+   "minDelay":"290min",
+   "minGrace":null,
+   "branchId":90,
+   "typeMarked":1,
+   "userId":112
+}

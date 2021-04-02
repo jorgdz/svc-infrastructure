@@ -1,0 +1,75 @@
+version: "3.4"
+
+networks: 
+  net-gotalent:
+
+services:
+  rgt-us-serverconfig:
+    build:
+      context: ./ServerConfigUS
+      dockerfile: Dockerfile
+    networks:
+      - net-gotalent
+    image: rgt/us-serverconfig
+    ports:
+      - "8888:8888"
+    container_name: rgt-us-serverconfig-api
+
+  rgt-es-marcacion:
+    build:
+      context: ./MarcacionES
+      dockerfile: Dockerfile
+    networks:
+      - net-gotalent
+    depends_on:
+      - rgt-us-serverconfig
+    environment:
+      SPRING_PROFILE: dev
+      SERVER_CONFIG: rgt-us-serverconfig
+    image: rgt/es-marcacion
+    ports:
+      - "8071:8071"
+    container_name: rgt-es-marcacion-api
+
+  rgt-us-enviaremail:
+    build:
+      context: ./EnviarEmailUS
+      dockerfile: Dockerfile
+    networks:
+      - net-gotalent
+    depends_on:
+      - rgt-us-serverconfig
+    environment:
+      SPRING_PROFILE: dev
+      SERVER_CONFIG: rgt-us-serverconfig
+    image: rgt/us-enviaremail
+    ports:
+      - "8085:8085"
+    container_name: rgt-us-enviaremail-api
+
+  rgt-ms-importarmarcaciones:
+    build:
+      context: ./ImportarMarcacionesMS
+      dockerfile: Dockerfile
+    networks:
+      - net-gotalent
+    depends_on:
+      - rgt-us-serverconfig
+    environment:
+      SPRING_PROFILE: dev
+      SERVER_CONFIG: rgt-us-serverconfig
+    image: rgt/ms-importarmarcaciones
+    ports:
+      - "8090:8090"
+    container_name: rgt-ms-importarmarcaciones-api
+
+  rgt-us-marcacionesexternas:
+    build:
+      context: ./marcacionesexternasus
+      dockerfile: Dockerfile
+    networks:
+      - net-gotalent
+    image: rgt/us-marcacionesexternas
+    ports:
+      - "8080:8080"
+    container_name: rgt-us-marcacionesexternas-api

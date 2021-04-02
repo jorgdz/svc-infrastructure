@@ -1,0 +1,30 @@
+[
+	{
+	  "idMarcacion": 0,
+	  "fechaHora": "2021-03-30T13:25:14.577Z",
+	  "idOrigenMarcacion": 123,
+	  "codigoMarcacion": 1,
+	  "emailEmpleado": "juan@righttek.com"
+	},
+	{
+	  "idMarcacion": 0,
+	  "fechaHora": "2021-03-30T14:25:14.577Z",
+	  "idOrigenMarcacion": 124,
+	  "codigoMarcacion": 1,
+	  "emailEmpleado": "fabricio@righttek.com"
+	},
+	{
+	  "idMarcacion": 0,
+	  "fechaHora": "2021-03-30T22:25:14.577Z",
+	  "idOrigenMarcacion": 125,
+	  "codigoMarcacion": 1,
+	  "emailEmpleado": "fernando@righttek.com"
+	},
+	{
+	  "idMarcacion": 0,
+	  "fechaHora": "2021-03-30T23:25:14.577Z",
+	  "idOrigenMarcacion": 126,
+	  "codigoMarcacion": 1,
+	  "emailEmpleado": "javiero@righttek.com"
+	}
+]
